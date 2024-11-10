@@ -1,3 +1,3 @@
 ### Guess Country Flag App
 
-![Simulator Screenshot - iPhone 16 Pro - 2024-11-10 at 07 10 44](https://github.com/user-attachments/assets/d4112932-b333-469a-9c2d-3bf9880fbc01)
+<img width="397" alt="Screenshot 2024-11-10 at 7 13 40 AM" src="https://github.com/user-attachments/assets/7f67968e-b201-46dc-8d55-b645006551ab">
