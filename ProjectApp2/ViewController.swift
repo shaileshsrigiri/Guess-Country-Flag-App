@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerInfoLabel: UILabel!
     @IBOutlet weak var guessLabel: UILabel!
     
-    var countries = [String]()
+    var cars = [String]()
     var score = 0 {
         didSet {
             updatePlayerInfoLabel()
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+        cars += ["Mazzanti", "Renault", "Alpine", "Ford", "Mercedes-Benz", "Lexus", "MG", "Hyundai", "Jeep", "Lynk & Co", "Iveco", "Peugeot", ".DS_Store", "Borgward", "Bentley", "Chevrolet", "SEAT", "Aston Martin", "Citroën", "Cadillac", "Land Rover", "Buick", "Aixam", "NIO", "WEY", "Fiat", "McLaren", "Bridgestone", "BMW M", "Ligier", "Volkswagen", "Smart", "Acura", "Abarth", "Tesla", "Volvo", "Dodge", "Toyota", "Lancia", "Audi", "Ferrari", "Sumitomo", "Changan", "Stellantis", "Geely", "Holden", "Chrysler", "Goodyear", "Maserati", "Škoda", "Koenigsegg", "Rolls-Royce", "Bugatti", "Subaru", "Chery", "Haval", "Mini", "Lotus", "GMC", "Pagani", "Mitsubishi", "DS", "Tata", "Continental", "BMW", "Spyker", "Kia", "Vauxhall", "BYD", "Genesis", "Alfa Romeo", "Porsche", "Lamborghini", "Dacia", "Suzuki", "Opel", "Lincoln", "Maybach", "Li Auto", "Microcar", "Michelin", "Hongqi", "Nissan", "Jaguar", "Infiniti", "Mazda"]
         setupNavigationBar()
         promptForPlayerName()
     }
@@ -59,22 +59,15 @@ class ViewController: UIViewController {
         
         questionsAsked += 1
         
-        countries.shuffle()
+        cars.shuffle()
         correctAnswer = Int.random(in: 0...2)
         
-        button1.setImage(UIImage(named: countries[0]), for: .normal)
-        button2.setImage(UIImage(named: countries[1]), for: .normal)
-        button3.setImage(UIImage(named: countries[2]), for: .normal)
+        button1.setImage(UIImage(named: cars[0]), for: .normal)
+        button2.setImage(UIImage(named: cars[1]), for: .normal)
+        button3.setImage(UIImage(named: cars[2]), for: .normal)
         
-        button1.layer.borderWidth = 2
-        button2.layer.borderWidth = 2
-        button3.layer.borderWidth = 2
         
-        button1.layer.borderColor = UIColor.black.cgColor
-        button2.layer.borderColor = UIColor.black.cgColor
-        button3.layer.borderColor = UIColor.black.cgColor
-        
-        guessLabel.text = "Which flag belongs to \(countries[correctAnswer].uppercased())?"
+        guessLabel.text = "Which car logo belongs to \(cars[correctAnswer].uppercased())?"
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
@@ -83,7 +76,7 @@ class ViewController: UIViewController {
             title = "Correct"
             score += 1
         } else {
-            title = "Wrong! That's the flag of \(countries[sender.tag])"
+            title = "Wrong! That's the logo of \(cars[sender.tag])"
             score -= 1
         }
         
@@ -128,7 +121,7 @@ class ViewController: UIViewController {
     func setupNavigationBar() {
         let menuButton = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(showMenu))
         navigationItem.rightBarButtonItem = menuButton
-        navigationItem.title = "Flag Quiz"
+        navigationItem.title = "Car Logo Quiz"
     }
 
     @objc func showMenu() {
